@@ -7,4 +7,5 @@
 
 
 # 導入
+CDN
 `<link rel="stylesheet" href="https://ituyama.github.io/fast-frame/css/fast-frame-min.css">`
