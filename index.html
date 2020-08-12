@@ -7,13 +7,50 @@
   <link rel="stylesheet" href="css/fast-frame-min.css">
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAhufCR0MI0rzJgBUCwCKzhaEuuQJgV9Do",
+      authDomain: "fast-frame.firebaseapp.com",
+      databaseURL: "https://fast-frame.firebaseio.com",
+      projectId: "fast-frame",
+      storageBucket: "fast-frame.appspot.com",
+      messagingSenderId: "20630914601",
+      appId: "1:20630914601:web:ec2089c24389c0cbfefe38",
+      measurementId: "G-8WNGR58074"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+
+
+
+
+
+
+
+
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#"> サイト名　</a>
+    <a class="navbar-brand" href="#">
+
+<img src="fastframe.png" alt="" style="width:200px; height:80px;">
+    </a>
   </nav>
   <div class="jumbotron jumbotron-fluid" style=" background:url(media/ファイル名.png) center no-repeat; background-size: cover;" 　>
     <div class="container">
-      <h1 class="display-4">キャッチフレーズ</h1>
-      <p class="lead">説明</p>
+      <h1 class="display-4">爆速５分でサイト作成。</h1>
+      <p class="lead">強力なフレームワークと画像ライブラリで、最短５分でサイト作成。</p>
     </div>
   </div>
   <div class="container">
@@ -22,7 +59,7 @@
         <div class="card">
           <img class="card-img-top" src="media/アイコン１.png">
           <div class="card-body">
-            <h5 class="card-titles">なんかすごい</h5>
+            <h4 class="card-titles">爆速</h4>
             <p class="card-text">それっぽさ、大切です。</p>
           </div>
         </div>
