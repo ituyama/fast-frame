@@ -5,37 +5,13 @@
   <title>サイト名</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="css/fast-frame-min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
-
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyAhufCR0MI0rzJgBUCwCKzhaEuuQJgV9Do",
-      authDomain: "fast-frame.firebaseapp.com",
-      databaseURL: "https://fast-frame.firebaseio.com",
-      projectId: "fast-frame",
-      storageBucket: "fast-frame.appspot.com",
-      messagingSenderId: "20630914601",
-      appId: "1:20630914601:web:ec2089c24389c0cbfefe38",
-      measurementId: "G-8WNGR58074"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
-
-
-
-
 
 
 
@@ -99,8 +75,82 @@
       </div>
     </div>
   </div>
+<script>
+
+const app = new Vue({
+el: '#app',
+data: {
+    email: '',
+    password: ''
+},
+methods: {
+    registerUser(){
+
+    }
+}
+});
+
+methods: {
+  registerUser(){
+    console.log(firebase);
+    firebase.auth().createUserWithEmailAndPassword(this.email, this.password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
+  }
+}
+</script>
+<div id="app" class="container mt-5">
+  <h2>ユーザ登録画面</h2>
+  <div class="row">
+      <div class="col-sm-8">
+          <form @submit.prevent="registerUser">
+              <div class="form-group">
+                  <label for="email">メールアドレス:</label>
+                  <input type="email" class="form-control" id="email" v-model="email">
+              </div>
+              <div class="form-group">
+                <label for="password">パスワード:</label>
+                <input type="password" class="form-control" id="password" v-model="password">
+              </div>
+              <button type="submit" class="btn btn-info">登録</button>
+          </form>
+      </div>
+  </div>
+</div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAhufCR0MI0rzJgBUCwCKzhaEuuQJgV9Do",
+    authDomain: "fast-frame.firebaseapp.com",
+    databaseURL: "https://fast-frame.firebaseio.com",
+    projectId: "fast-frame",
+    storageBucket: "fast-frame.appspot.com",
+    messagingSenderId: "20630914601",
+    appId: "1:20630914601:web:ec2089c24389c0cbfefe38",
+    measurementId: "G-8WNGR58074"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </body>
 </html>
